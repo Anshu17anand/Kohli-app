@@ -5,16 +5,6 @@ import { useAuthRedirect } from '@/lib/useauth';
 import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 
-const infoRows = [
-  { label: "Born", value: "November 05, 1988 (36 years)" },
-  { label: "Birth Place", value: "Delhi" },
-  { label: "Height", value: "5 ft 9 in (175 cm)" },
-  { label: "Role", value: "Batsman" },
-  { label: "Batting Style", value: "Right Handed Bat" },
-  { label: "Bowling Style", value: "Right-arm medium" },
-  { label: "Top fan", value: "King Anshu" },
-];
-
 export default function Dashboard() {
   const loading = useAuthRedirect();
   const router = useRouter();

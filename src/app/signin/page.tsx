@@ -58,7 +58,7 @@ export default function SignIn() {
         </form>
         {message && <p className="mt-4 text-red-500">{message}</p>}
         <p className="mt-4">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <button
             onClick={() => router.push('/signup')}
             className="text-blue-600 hover:underline"

@@ -45,7 +45,7 @@ const bowlingStats = [
 const battingHeaders = ['M', 'Inn', 'Runs', 'BF', 'HS', 'Avg', 'SR', 'NO', '4s', '6s', '50', '100', '200'];
 const bowlingHeaders = ['M', 'Inn', 'B', 'Runs', 'Wkts', 'Avg', 'Econ', 'SR', 'BBI', 'BBM', '5w', '10w'];
 
-function StatTable({ title, headers, data }: { title: string, headers: string[], data: any[] }) {
+function StatTable({ title, headers, data }: { title: string, headers: string[], data: { format: string; [key: string]: string | number }[] }) {
   return (
     <div className="w-full max-w-5xl mb-10">
       <h2 className="text-2xl font-bold text-white mb-2">{title}</h2>

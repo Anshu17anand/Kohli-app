@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div
@@ -11,7 +9,7 @@ export default function Home() {
 
       <main className="relative z-10 flex flex-col items-center justify-center flex-1 px-20 text-center text-white">
         <h1 className="text-6xl font-semibold tracking-tight">
-          Welcome to the King's Den
+          Welcome to the King&apos;s Den
         </h1>
 
         <p className="mt-3 text-2xl">

@@ -1,11 +1,9 @@
 // src/app/quiz/page.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAuthRedirect } from '@/lib/useauth';
-import { useRouter } from 'next/navigation';
 import Link from "next/link";
-import { supabase } from '@/lib/supabase';
 
 interface Question {
   id: number;
@@ -97,7 +95,6 @@ const quizQuestions: Question[] = [
 
 export default function Quiz() {
   const loading = useAuthRedirect();
-  const router = useRouter();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -256,10 +253,8 @@ export default function Quiz() {
             ></div>
           </div>
         </div>
-
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-6">{question.question}</h2>
-          
           <div className="space-y-3">
             {question.options.map((option, index) => (
               <button
@@ -277,12 +272,10 @@ export default function Quiz() {
             ))}
           </div>
         </div>
-
         <div className="flex justify-between items-center">
           <div className="text-gray-400">
             Score: {score}
           </div>
-          
           <button
             onClick={currentQuestion === quizQuestions.length - 1 ? handleSubmit : handleNext}
             disabled={selectedAnswer === null}
