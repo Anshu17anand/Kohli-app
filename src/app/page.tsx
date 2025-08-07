@@ -1,41 +1,31 @@
+'use client';
+
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-screen py-2 bg-cover bg-top"
-      style={{ backgroundImage: 'url("/kohli_rcb_bg.jpg")' }}
+      className="relative min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: 'url("/kohli_india.jpg")' }}
     >
-      {/* Overlay for readability on top of the background image */}
-      <div className="absolute inset-0 bg-black opacity-70"></div>
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black opacity-30"></div>
 
-      <main className="relative z-10 flex flex-col items-center justify-center flex-1 px-20 text-center text-white">
-        <h1 className="text-6xl font-semibold tracking-tight">
-          Welcome to the King&apos;s Den
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Please choose an option to continue.
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around mt-6 sm:w-full">
-          <a
-            href="/signup"
-            className="p-6 mt-6 text-center border-2 border-red-700 w-96 min-h-[160px] rounded-xl transition-colors hover:bg-red-800 bg-red-700 text-white flex flex-col justify-center items-center"
-          >
-            <h3 className="text-2xl font-bold">Sign Up &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Create a new account to get started.
-            </p>
-          </a>
-
-          <a
-            href="/signin"
-            className="p-6 mt-6 text-center border-2 border-red-700 w-96 min-h-[160px] rounded-xl transition-colors hover:bg-red-800 bg-red-700 text-white flex flex-col justify-center items-center"
-          >
-            <h3 className="text-2xl font-bold">Sign In &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Already have an account? Sign in here.
-            </p>
-          </a>
+      <main className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full h-full">
+        {/* Main options at the bottom */}
+        <div className="fixed left-0 bottom-0 w-full flex flex-row justify-center gap-6 pb-12 z-20">
+          <Link href="/stats" className="bg-red-700 hover:bg-red-800 text-white rounded-xl p-8 text-center shadow-lg transition-colors border-2 border-red-900 font-semibold text-xl mx-2 min-w-[180px]">
+            View Stats
+          </Link>
+          <Link href="/milestones" className="bg-red-700 hover:bg-red-800 text-white rounded-xl p-8 text-center shadow-lg transition-colors border-2 border-red-900 font-semibold text-xl mx-2 min-w-[180px]">
+            Milestone Timeline
+          </Link>
+          <Link href="/quiz" className="bg-red-700 hover:bg-red-800 text-white rounded-xl p-8 text-center shadow-lg transition-colors border-2 border-red-900 font-semibold text-xl mx-2 min-w-[180px]">
+            Quiz / Trivia
+          </Link>
+          <Link href="/personalinfo" className="bg-red-700 hover:bg-red-800 text-white rounded-xl p-8 text-center shadow-lg transition-colors border-2 border-red-900 font-semibold text-xl mx-2 min-w-[180px]">
+            Personal Information
+          </Link>
         </div>
       </main>
     </div>

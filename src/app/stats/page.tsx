@@ -1,7 +1,6 @@
 // src/app/stats/page.tsx
 'use client';
 
-import { useAuthRedirect } from '@/lib/useauth';
 import Link from "next/link";
 
 const battingStats = [
@@ -76,14 +75,11 @@ function StatTable({ title, headers, data }: { title: string, headers: string[],
 }
 
 export default function Stats() {
-  const loading = useAuthRedirect();
-  if (loading) return <div className="text-white">Loading...</div>;
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black bg-opacity-90 py-12">
       {/* Back Button */}
       <Link
-        href="/dashboard"
+        href="/"
         className="absolute top-6 left-8 z-30 bg-red-700 hover:bg-red-800 text-white px-6 py-2 rounded-lg font-semibold shadow-lg border-2 border-red-900 transition-colors"
       >
         &larr; Back

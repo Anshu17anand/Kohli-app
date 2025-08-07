@@ -2,7 +2,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useAuthRedirect } from '@/lib/useauth';
 import Link from "next/link";
 
 interface Question {
@@ -94,7 +93,6 @@ const quizQuestions: Question[] = [
 ];
 
 export default function Quiz() {
-  const loading = useAuthRedirect();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -105,8 +103,6 @@ export default function Quiz() {
     medium: 0,
     hard: 0,
   });
-
-  if (loading) return <div className="text-white">Loading...</div>;
 
   const handleAnswerSelect = (answerIndex: number) => {
     if (!answered) {
@@ -178,7 +174,7 @@ export default function Quiz() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-4 relative">
         <Link
-          href="/dashboard"
+          href="/"
           className="absolute top-6 left-8 z-30 bg-red-700 hover:bg-red-800 text-white px-6 py-2 rounded-lg font-semibold shadow-lg border-2 border-red-900 transition-colors"
         >
           &larr; Back
@@ -230,7 +226,7 @@ export default function Quiz() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-4 relative">
       <Link
-        href="/dashboard"
+        href="/"
         className="absolute top-6 left-8 z-30 bg-red-700 hover:bg-red-800 text-white px-6 py-2 rounded-lg font-semibold shadow-lg border-2 border-red-900 transition-colors"
       >
         &larr; Back
